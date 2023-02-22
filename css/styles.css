@@ -1,11 +1,3 @@
-/* @media screen and (min-width: 768px) {
-    
-} */
-/* @media screen and (min-width: 1200px) {
-
-} */
-
-
 :root {
     /* fonts */
 --main-font: "Roboto", sans-serif;
@@ -62,9 +54,10 @@ img {
 display: block;
 max-width: 100%;
 height: auto;
+
+object-fit: cover;
+object-position:center ;
 }
-
-
 
 /* Main styles */
 
@@ -126,6 +119,7 @@ justify-content: flex-end;
 }
 }
 
+
 @media screen and (min-width: 768px) {
 .header-container {
 display: flex;
@@ -161,8 +155,7 @@ margin-right: 118px;
 }
 
 @media screen and (max-width: 767px) {
-.header-list,
-.address-list {
+.header-list {
 display: none;
 }
 }
@@ -226,14 +219,29 @@ color: var(--pressed-state);
 /* Contacts styles */
 /* ---------------------------------------------- */
 
+.address-list {
+display: none;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 .address-list {
 display: flex;
 flex-direction: column;
 gap: 4px; 
+padding: 0;
+}
+}
+
+@media screen and (min-width: 1200px) {
+.address-list {
+display: flex;
+gap: 40px;
+padding-top: 24px;
+padding-bottom: 24px;
 }
 }
     
+
 .address-link {
 font-style: normal;
 line-height: 1.5;
@@ -251,14 +259,6 @@ letter-spacing: 0.04em;
 }
 } 
 
-@media screen and (min-width: 480px) and (max-width: 767px) and (min-width: 1200px) {
-.address-link {
-display: block;
-padding-top: 24px;
-padding-bottom: 24px;
-}
-}
-
 .address-link:hover,
 .address-link:focus {
 color: var(--pressed-state);
@@ -270,24 +270,51 @@ color: var(--pressed-state);
 
 .hero {
 background-image:
-url(../images/hero/dark-bg.png),
-url(../images/hero/people-office.jpg);
+url(../images/hero/dark-bg-mob_428.png),
+url(../images/hero/people/people-mob_428.jpg);
+
 
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
 max-width: 1440px;
-min-height:600px;
+min-height: auto;
 text-align: center;
 margin-left: auto;
 margin-right: auto;
 
-padding: 188px 0px;
+padding-top: 112px;
+padding-bottom: 112px;
+} 
+
+@media screen and (min-width: 768px) {
+.hero {
+background-image:
+url(../images/hero/dark-bg-tab_768.png),
+url(../images/hero/people/people-tab_768.jpg);
+}
+@media (min-device-pixel-ratio: 2),  (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+  background-image:
+  url(../images/hero/dark-bg-tab_1536.png),
+  url(../images/hero/people/people-tab_1536.jpg);
+}
+}
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 1200px) {
 .hero {
- margin-bottom: 96px;
+background-image:
+url(../images/hero/dark-bg-desk_1440.png),
+url(../images/hero/people/people-desk_1440.jpg);
+padding: 188px 0px
+} 
+@media (min-device-pixel-ratio: 2),  (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+    background-image:
+    url(../images/hero/dark-bg-desk-2880.png),
+    url(../images/hero/people/people-desk_2880.jpg);
+}
 }
 }
 
@@ -574,7 +601,8 @@ background-color: var(--pressed-state);
 /* ------------------------------------ */
 
 .section {
-margin-bottom: 96px;
+padding-top: 96px;
+padding-bottom: 96px;
 }
 
 @media screen and (min-width: 1200px) {
